@@ -1,0 +1,33 @@
+.gheChuaDat {
+    width: 35px;
+    height: 35px;
+    background-color: gray;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.gheDangDat {
+
+    background-color: green;
+
+}
+
+.gheDaDat {
+    cursor: no-drop;
+    background-color: rgb(184, 26, 26);
+}
+
+.gheVip {
+    background-color: yellow;
+}
+
+.gheKhachDat {
+ background-color: white;
+}
+/* HomeCarousel css */
+.slick-next {
+    left: 96%;
+    display: none!important;
+}
