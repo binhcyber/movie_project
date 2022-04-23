@@ -23,7 +23,7 @@ export default function ItemDetailFilm({ rap }) {
                   Thời gian chiếu:
                   {moment(lichchieu.ngayChieuGioChieu).format("DD/MM/YYYY")}
                 </p>
-                <button className="text-white bg-red-500 py-2 px-2 rounded cursor-pointer">
+                <button className="text-white bg-gradient-to-r from-tickets to-tickete hover:to-yellow-500 py-2 px-2 rounded cursor-pointer">
                   {!LocalUser.getLocalUser() ? (
                     <Redirect to="/login" />
                   ) : (

@@ -10,18 +10,24 @@ import { createBrowserHistory } from "history";
 // import { Route } from "react-router-dom";
 import DetailPages from "./pages/DetailPages/DetailPages";
 import Ticket from "./pages/Ticket/Ticket";
+import HeaderMobile from "./tempalates/Layout/HomeTemplate/Header/HeaderMobile";
+import MovieLoading from "./components/movieLoading/MovieLoading";
 export const history = createBrowserHistory();
 function App() {
   return (
-    <Router history={history}>
-      <Switch>
-        <HomeTemplate path={"/"} exact Component={Home} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
-        <HomeTemplate path={"/detail/:id"} exact Component={DetailPages} />
-        <TicketTemplate path={"/ticket/:id"} exact Component={Ticket} />
-      </Switch>
-    </Router>
+    <>
+      <MovieLoading />
+      <Router history={history}>
+        <Switch>
+          <HomeTemplate path={"/"} exact Component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/mobile" exact component={HeaderMobile} />
+          <HomeTemplate path={"/detail/:id"} exact Component={DetailPages} />
+          <TicketTemplate path={"/ticket/:id"} exact Component={Ticket} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 

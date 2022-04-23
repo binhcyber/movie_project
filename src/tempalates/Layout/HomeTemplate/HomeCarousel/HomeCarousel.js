@@ -1,13 +1,16 @@
 import React from "react";
 import { Carousel } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../../../pages/Ticket/Ticket.css";
-
+// import ReactDOM from "react-dom";
+// import ModalVideo from "react-modal-video";
+// import "node_modules/react-modal-video/scss/modal-video.scss";
 import { GetCarouselAction } from "../../../../redux/action/CarouselAction";
+// import { RightCircleOutlined } from "@ant-design/icons";
 // import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 const settings = {
   dots: true,
@@ -17,6 +20,7 @@ const settings = {
   slidesToScroll: 1,
 };
 export default function HomeCarousel() {
+  // const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetCarouselAction());
@@ -26,7 +30,7 @@ export default function HomeCarousel() {
   const renderBanner = () => {
     return dsBannerPhim?.map((banner, index) => {
       return (
-        <div key={index}>
+        <div className="relative" key={index}>
           <img
             src={banner.hinhAnh}
             style={{
@@ -36,6 +40,21 @@ export default function HomeCarousel() {
               objectPosition: "center",
             }}
           />
+          {/* <div className="w-full h-full absolute top-0 flex justify-center items-center group">
+            <ModalVideo
+              channel="youtube"
+              autoplay
+              isOpen={isOpen}
+              videoId="L61p2uyiMSo"
+              onClose={() => setOpen(false)}
+            />
+            <button
+              className=" hidden group-hover:block"
+              onClick={() => setOpen(true)}
+            >
+              <RightCircleOutlined className="text-5xl" />
+            </button>
+          </div> */}
         </div>
       );
     });

@@ -3,10 +3,14 @@ import { DANG_KY, DANG_NHAP } from "../type/UserType";
 // import { useHistory } from "react-router-dom";
 import { message, Button, Space } from "antd";
 import { history } from "../../App";
+import { store } from "../../index.js";
+import { set_Loading_End, set_Loading_Start } from "./LoadingAction";
 export const setUserLoginAction = (data) => {
+  // store.dispatch(set_Loading_Start());
   return (dispatch) => {
     QuanLyUserService.layThongTinNguoiDung(data)
       .then((result) => {
+        // store.dispatch(set_Loading_End());
         console.log(result);
         if (result.status === 200) {
           dispatch({
@@ -20,6 +24,7 @@ export const setUserLoginAction = (data) => {
         });
       })
       .catch((err) => {
+        //  store.dispatch(set_Loading_End());
         message.error("Tài khoản hoặc mật khẩu không đúng", 10);
       });
   };
@@ -48,9 +53,11 @@ export const setUserLoginAction = (data) => {
   // }
 };
 export const setUserSignUpAction = (data) => {
+  // store.dispatch(set_Loading_Start());
   return (dispatch) => {
     QuanLyUserService.layThongTinDangKy(data)
       .then((result) => {
+        // store.dispatch(set_Loading_End());
         if (result.status === 200) {
           dispatch({
             type: DANG_KY,
@@ -63,6 +70,7 @@ export const setUserSignUpAction = (data) => {
         });
       })
       .catch((err) => {
+        // store.dispatch(set_Loading_End());
         message.error("Vui lòng đăng ký lại", 10);
       });
   };

@@ -6,7 +6,6 @@ const { Meta } = Card;
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { setDetailFilmAction } from "../../../../redux/action/DetailFilmAction.js";
-
 import { useHistory } from "react-router-dom";
 
 var settings = {
@@ -82,7 +81,7 @@ export default function HomeDetailFilm() {
                 onClick={() => {
                   history.push(`/detail/${film.maPhim}`);
                 }}
-                className="w-full bg-blue-500 text-center py-3 rounded"
+                className="w-full bg-gradient-to-r from-detailbts to-detailbte hover:to-yellow-500 font-medium text-white text-lg text-center py-3 rounded"
               >
                 ĐẶT VÉ
               </div>

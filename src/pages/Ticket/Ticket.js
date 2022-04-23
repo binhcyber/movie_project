@@ -107,7 +107,7 @@ export default function Ticket() {
               console.log(thongtinDatVe);
               dispatch(getTicketAction(thongtinDatVe));
             }}
-            className="text-white my-0 mx-auto text-center mt-2 py-2 bg-green-500 w-4/5 rounded cursor-pointer"
+            className="text-white my-0 mx-auto text-center mt-2 py-2 bg-gradient-to-r from-ticketbts to-ticketbte font-medium text-lg hover:to-yellow-500 w-4/5 rounded cursor-pointer"
           >
             <button
               onClick={() => {

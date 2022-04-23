@@ -31,3 +31,11 @@
     left: 96%;
     display: none!important;
 }
+a{
+    color: white!important;
+    font-weight: 400;
+
+}
+a:hover{
+    color: white!important
+}

@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import { setUserSignUpAction } from "../../../redux/action/UserAction";
 import * as Yup from "yup";
+import { NavLink } from "react-router-dom";
 export default function Register() {
   const dispatch = useDispatch();
   const SignupSchema = Yup.object().shape({
@@ -92,7 +93,9 @@ export default function Register() {
             <div class="flex flex-col items-center mt-5">
               <p class="mt-1 text-xs font-light text-gray-500">
                 Register already?
-                <a class="ml-1 font-medium text-blue-400">Sign in now</a>
+                <NavLink to="/login" class="ml-1 font-medium text-blue-400">
+                  Login now
+                </NavLink>
               </p>
             </div>
           </Form>

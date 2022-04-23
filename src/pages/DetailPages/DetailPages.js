@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
 import { NavLink, useParams } from "react-router-dom";
@@ -12,8 +12,11 @@ import "./CircleRating.css";
 import { Rate } from "antd";
 import { Tabs, Radio, Space } from "antd";
 import ItemDetailFilm from "./ItemDetailFilm";
+import ReactDOM from "react-dom";
+import ModalVideo from "react-modal-video";
 const { TabPane } = Tabs;
 export default function DetailPages() {
+  const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
   const { inforFilm, calculateFilm } = useSelector(
@@ -48,21 +51,24 @@ export default function DetailPages() {
         borderRadius={0} // default border radius value is 10px
       >
         <div className="container flex flex-col space-y-5">
-          <div className="grid grid-cols-3">
-            <div className="flex flex-row space-x-2">
+          <div className="grid xl:grid-col-3 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-3">
+            <div className="flex flex-row space-x-2 w-full sm:w-full md:w-full ">
               <img src={inforFilm.hinhAnh} />
               <div>
                 <h3 className="text-white text-xl">{inforFilm.tenPhim}</h3>
                 <p className="text-white bg-green-500 w-2/3 text-center rounded">
                   {moment(inforFilm.ngayKhoiChieu).format("DD/MM/YYYY")}
                 </p>
-                <button className="text-white bg-red-500 py-2 px-2 rounded cursor-pointer">
-                  ĐẶT VÉ
-                </button>
+                {/* <button
+                    onClick={() => setOpen(true)}
+                    className="text-white bg-red-500 py-2 px-2 rounded cursor-pointer"
+                  >
+                    Trailer
+                  </button> */}
               </div>
             </div>
-            <div className=""></div>
-            <div className="text-center">
+            <div className="hidden xl:block lg:block sm:hidden md:block"></div>
+            <div className="hidden xl:block lg:block text-center md:block sm:hidden">
               <div className={`c100 p${inforFilm.danhGia * 10} big`}>
                 <span>{inforFilm.danhGia * 10}%</span>
                 <div className="slice">
@@ -75,8 +81,11 @@ export default function DetailPages() {
               </div>
             </div>
           </div>
-          <div className="bg-white rounded">
-            <Tabs tabPosition={"left"}>
+          <div className="bg-white rounded ">
+            <Tabs
+              className="overflow-x-scroll sm:overflow-x-scroll"
+              tabPosition={"left"}
+            >
               {calculateFilm.heThongRapChieu?.map((rapChieu, index) => {
                 return (
                   <TabPane

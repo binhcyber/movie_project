@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserLoginAction } from "../../../redux/action/UserAction";
 import { MA_NHOM } from "../../../utils/setting/config";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { message } from "antd";
 import * as Yup from "yup";
 export default function Login() {
@@ -25,6 +25,7 @@ export default function Login() {
   });
   return (
     <Formik
+      class="container mx-auto p-4 bg-white"
       initialValues={{
         taiKhoan: "",
         matKhau: "",
@@ -39,67 +40,43 @@ export default function Login() {
       }}
     >
       {({ errors, touched }) => (
-        <Form>
-          <div className="mb-6">
-            <label
-              htmlFor="text"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Your email
-            </label>
+        <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
+          <h1 class="text-lg font-bold">Login</h1>
+          <Form class="flex flex-col mt-4">
             <Field
-              name="taiKhoan"
-              type="text"
-              id="taiKhoan"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="name@flowbite.com"
-            />
-            {errors.taiKhoan && touched.taiKhoan ? (
-              <div>{errors.taiKhoan}</div>
-            ) : null}
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="matKhau"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Your password
-            </label>
-            <Field
-              name="matKhau"
               type="password"
-              id="matKhau"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              name="matKhau"
+              class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+              placeholder="Mật khẩu"
             />
             {errors.matKhau && touched.matKhau ? (
               <div>{errors.matKhau}</div>
             ) : null}
-          </div>
-          <div className="flex items-start mb-6">
-            <div className="flex items-center h-5">
-              {/* <input
-                id="remember"
-                aria-describedby="remember"
-                type="checkbox"
-                className="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-              /> */}
+            <Field
+              type="text"
+              name="taiKhoan"
+              class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+              placeholder="Tài khoản"
+            />
+            {errors.taiKhoan && touched.taiKhoan ? (
+              <div>{errors.taiKhoan}</div>
+            ) : null}
+            <button
+              type="submit"
+              class="mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent text-white focus:outline-none bg-blue-500 text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center items-center font-medium focus:outline-none"
+            >
+              Login
+            </button>
+            <div class="flex flex-col items-center mt-5">
+              <p class="mt-1 text-xs font-light text-gray-500">
+                Are you register?
+                <NavLink to="/register" class="ml-1 font-medium text-blue-400">
+                  Register now
+                </NavLink>
+              </p>
             </div>
-            <div className="ml-3 text-sm">
-              <label
-                htmlFor="remember"
-                className="font-medium text-gray-900 dark:text-gray-300"
-              >
-                Remember me
-              </label>
-            </div>
-          </div>
-          <button
-            type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Submit
-          </button>
-        </Form>
+          </Form>
+        </div>
       )}
     </Formik>
   );

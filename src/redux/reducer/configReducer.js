@@ -5,6 +5,7 @@ import { TabsFilmReducer } from "./TabsFilmReducer";
 import { InforFilmReducer } from "./InForFilmReducer";
 import { UserReducer } from "./UserReducer";
 import { TicketReducer } from "./TicketReducer";
+import { LoadingReducer } from "./LoadingReducer";
 export const configReducer = combineReducers({
   CarouselReducer,
   DetailFilmReducer,
@@ -12,5 +13,6 @@ export const configReducer = combineReducers({
   InforFilmReducer,
   UserReducer,
   TicketReducer,
+  LoadingReducer,
   //
 });

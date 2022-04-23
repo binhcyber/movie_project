@@ -1,0 +1,13 @@
+.bgLoading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    background-color: #22292f;
+}

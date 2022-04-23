@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { configReducer } from "./redux/reducer/configReducer";
 import thunk from "redux-thunk";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
+export const store = createStore(
   configReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
