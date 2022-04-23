@@ -12,15 +12,58 @@ import "../../../../pages/Ticket/Ticket.css";
 import { GetCarouselAction } from "../../../../redux/action/CarouselAction";
 // import { RightCircleOutlined } from "@ant-design/icons";
 // import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
+
+// const SamplePrevArrow = (props) => {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{
+//         ...style,
+//         display: "block",
+//         position: "absolute",
+//         top: 180,
+//         left: 20,
+//       }}
+//       onClick={onClick}
+//     />
+//   );
+// };
+// const SampleNextArrow = (props) => {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{
+//         ...style,
+//         display: "block",
+//         position: "absolute",
+//         right: 20,
+//       }}
+//       onClick={onClick}
+//     />
+//   );
+// };
 const settings = {
   dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  // nextArrow: <SampleNextArrow />,
+  // prevArrow: <SamplePrevArrow />,
+  appendDots: (dots) => (
+    <div
+      style={{
+        borderRadius: "10px",
+        padding: "10px",
+      }}
+    >
+      <ul style={{ marginBottom: "36px" }}> {dots} </ul>
+    </div>
+  ),
 };
 export default function HomeCarousel() {
-  // const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetCarouselAction());
@@ -40,27 +83,12 @@ export default function HomeCarousel() {
               objectPosition: "center",
             }}
           />
-          {/* <div className="w-full h-full absolute top-0 flex justify-center items-center group">
-            <ModalVideo
-              channel="youtube"
-              autoplay
-              isOpen={isOpen}
-              videoId="L61p2uyiMSo"
-              onClose={() => setOpen(false)}
-            />
-            <button
-              className=" hidden group-hover:block"
-              onClick={() => setOpen(true)}
-            >
-              <RightCircleOutlined className="text-5xl" />
-            </button>
-          </div> */}
         </div>
       );
     });
   };
   return (
-    <div className="mb-5">
+    <div className="mb-5 mt-24">
       <Slider {...settings}>{renderBanner()}</Slider>
     </div>
   );

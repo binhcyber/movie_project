@@ -70,7 +70,7 @@ export default function Ticket() {
     });
   };
   return (
-    <div className="flex flex-row w-full h-screen ">
+    <div className="flex flex-row w-full h-screen mt-28">
       <div className="mx-5 flex-shrink w-3/4">
         <div className={`${style["crossbar"]}`}></div>
         <div id={`${style["trapezoid"]}`}></div>

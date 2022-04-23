@@ -22,7 +22,7 @@ export default function HeaderMobile() {
     });
   };
   return (
-    <div className="container flex flex-row justify-center shadow-lg h-28 items-center">
+    <div className="container bg-white z-10 fixed top-0 right-0 left-0 flex flex-row justify-center shadow-lg h-28 items-center">
       <NavLink to={"/"}>
         <img src={logo} className="h-24 w-24" />
       </NavLink>

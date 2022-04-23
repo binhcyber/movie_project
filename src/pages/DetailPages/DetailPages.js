@@ -41,7 +41,7 @@ export default function DetailPages() {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="min-h-screen"
+      className="min-h-screen mt-24"
     >
       <CustomCard
         className="min-h-screen"
