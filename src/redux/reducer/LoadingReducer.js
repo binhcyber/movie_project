@@ -1,7 +1,7 @@
 import { SET_LOADING_END, SET_LOADING_START } from "../type/LoadingType";
 
 const initialState = {
-  isLoading: true,
+  isLoading: false,
   count: 0,
 };
 

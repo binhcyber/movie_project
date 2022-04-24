@@ -24,7 +24,7 @@ export default function Header() {
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm text-center lg:flex-grow">
           <a
-            href="#responsive-header"
+            href="#homedetailfilm"
             className="mt-4 mr-4 text-black font-bold hover: to-black"
           >
             Lịch chiếu
@@ -35,12 +35,9 @@ export default function Header() {
           >
             Cụm rạp
           </a>
-          <a
-            href="#responsive-header"
-            className="mt-4 mr-4 text-black font-bold"
-          >
+          <NavLink to={"/contact"} className="mt-4 mr-4 text-black font-bold">
             Contact
-          </a>
+          </NavLink>
         </div>
         {userLogin ? (
           <>
