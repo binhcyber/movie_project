@@ -11,10 +11,12 @@ export default function ContactPage() {
         Mọi thắc mắc xin vui lòng liên hệ đến nhà phát triển phần mềm thông qua:
       </p>
 
-      <ul className="w-40">
+      <ul>
         <li className="flex justify-start items-center space-x-2 text-lg">
           <BsFacebook size={"40px"} color="#1298f6" className="mb-2" />
           <a
+            target={"_blank"}
+            rel="noreferrer noopener"
             className="pb-1 text-black font-medium hover:text-blue-500"
             href="https://www.facebook.com/profile.php?id=100005753327465"
           >
@@ -24,8 +26,10 @@ export default function ContactPage() {
         <li className="flex justify-start  items-center space-x-2 text-lg">
           <GrMail size={"40px"} color={"#ea4335"} className="mb-2" />
           <a
+            target={"_blank"}
+            rel="noreferrer noopener"
             className="pb-1 text-black font-medium hover:text-red-500"
-            href="https://www.mail.google.com/"
+            href="https://www.gmail.com/"
           >
             binhcyber211997@gmail.com
           </a>
@@ -33,6 +37,8 @@ export default function ContactPage() {
         <li className="flex justify-start items-center space-x-2 text-lg">
           <BsGithub size={"40px"} className="mb-2" />
           <a
+            rel="noreferrer noopener"
+            target={"_blank"}
             className="pb-1 text-black font-medium hover:text-gray-500"
             href="https://github.com/binhcyber"
           >
