@@ -2,6 +2,8 @@ import { store } from "../../index.js";
 import { QuanLyDatVe } from "../../services/QuanLyDatVe/QuanLyDatVe";
 import { GET_LIST_SEAT } from "../type/TicketType";
 import { set_Loading_Start, set_Loading_End } from "../action/LoadingAction";
+import { message } from "antd";
+import { history } from "../../App.js";
 export const setTicketAction = (data) => {
   store.dispatch(set_Loading_Start());
   try {
@@ -20,16 +22,15 @@ export const setTicketAction = (data) => {
   }
 };
 export const getTicketAction = (data) => {
-  store.dispatch(set_Loading_Start());
   try {
     return async (dispatch) => {
       console.log(data);
       const result = await QuanLyDatVe.DatVe(data);
-      store.dispatch(set_Loading_End());
       console.log(result);
     };
   } catch (err) {
-    store.dispatch(set_Loading_End());
     console.log(err);
+    window.location.assign("/");
+    message.success("Đặt vé thành công");
   }
 };

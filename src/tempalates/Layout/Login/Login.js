@@ -14,12 +14,12 @@ export default function Login() {
   const SignupSchema = Yup.object().shape({
     matKhau: Yup.string()
       // .matches(/(userLogin?.matKhau)/, "Mât khẩu không hợp lệ")
-      .min(4, "Too Short!")
+      .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
     taiKhoan: Yup.string()
       // .matches(/({userLogin?.matKhau})/, "Tài khoản không hợp lệ")
-      .min(4, "Too Short!")
+      .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
   });

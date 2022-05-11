@@ -7,10 +7,11 @@ import {
   getTicketAction,
   setTicketAction,
 } from "../../redux/action/TicketAction";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { SET_SEAT } from "../../redux/type/TicketType";
 import { ThongTinDatVe } from "../../utils/models/model";
 export default function Ticket() {
+  const history = useHistory();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { dsGhe, dsGheDangDat } = useSelector((state) => state.TicketReducer);
@@ -106,6 +107,7 @@ export default function Ticket() {
               thongtinDatVe.danhSachVe = dsGheDangDat;
               console.log(thongtinDatVe);
               dispatch(getTicketAction(thongtinDatVe));
+              history.push("/");
             }}
             className="text-white my-0 mx-auto text-center mt-2 py-2 bg-gradient-to-r from-ticketbts to-ticketbte font-medium text-lg hover:to-yellow-500 w-4/5 rounded cursor-pointer"
           >
@@ -116,6 +118,7 @@ export default function Ticket() {
                 thongtinDatVe.danhSachVe = dsGheDangDat;
                 console.log(thongtinDatVe);
                 dispatch(getTicketAction(thongtinDatVe));
+                history.push("/");
               }}
             >
               ĐẶT VÉ

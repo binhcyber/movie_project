@@ -65,8 +65,8 @@ export const setUserSignUpAction = (data) => {
           });
         }
         setTimeout(() => {
-          history.push("/");
-          message.success("Đăng Nhập Thành Công");
+          history.push("/login");
+          message.success("Đăng Ký Thành Công");
         });
       })
       .catch((err) => {
