@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slider from "react-slick";
 import { Card } from "antd";
-const { Meta } = Card;
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { setDetailFilmAction } from "../../../../redux/action/DetailFilmAction.js";
 import { useHistory } from "react-router-dom";
-
+const { Meta } = Card;
 var settings = {
   dots: true,
   infinite: false,
