@@ -7,7 +7,6 @@ export const GetCarouselAction = () => {
   return async (dispatch) => {
     try {
       const result = await QuanlyPhimServices.LayDanhSachPhimBanner();
-      console.log(result);
       store.dispatch(set_Loading_End());
       dispatch({
         type: SET_BANNER_PHIM,

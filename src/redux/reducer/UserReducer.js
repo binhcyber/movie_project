@@ -9,7 +9,6 @@ const initialState = {
 export const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case DANG_NHAP: {
-      console.log(action.payload);
       LocalUser.setLocalUser(action.payload);
       state.userLogin = action.payload;
       localStorage.setItem(ACCESS_TOKEN, action.payload.accessToken);

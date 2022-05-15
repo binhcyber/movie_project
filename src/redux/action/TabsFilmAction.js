@@ -27,7 +27,6 @@ export const setThongTinLichChieuAction = () => {
   try {
     return async (dispatch) => {
       const result = await QuanlyRapServices.LayThongTinLichChieuHeThongRap();
-      console.log(result);
       store.dispatch(set_Loading_End());
       dispatch({
         type: SET_THONG_TIN_LICH_CHIEU,

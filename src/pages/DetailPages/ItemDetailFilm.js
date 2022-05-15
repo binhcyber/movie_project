@@ -4,8 +4,6 @@ import { NavLink, Redirect } from "react-router-dom";
 import { LocalUser } from "../../services/LocalUser/LocalUser";
 
 export default function ItemDetailFilm({ rap }) {
-  console.log(rap);
-
   return (
     <div className="flex w-full flex-row space-x-2 mt-5">
       <img src={rap.hinhAnh} className="w-20 h-20 flex-shrink-0" />

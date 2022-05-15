@@ -18,8 +18,6 @@ export default function Ticket() {
   useEffect(() => {
     dispatch(setTicketAction(id));
   }, []);
-  console.log(dsGhe);
-  console.log(dsGheDangDat);
   const { thongTinPhim, danhSachGhe } = dsGhe;
   const renderGheDangChon = () => {
     return dsGheDangDat?.map((soGhe, index) => {
@@ -105,7 +103,6 @@ export default function Ticket() {
               let thongtinDatVe = new ThongTinDatVe();
               thongtinDatVe.maLichChieu = id;
               thongtinDatVe.danhSachVe = dsGheDangDat;
-              console.log(thongtinDatVe);
               dispatch(getTicketAction(thongtinDatVe));
               history.push("/");
             }}
@@ -116,7 +113,6 @@ export default function Ticket() {
                 let thongtinDatVe = new ThongTinDatVe();
                 thongtinDatVe.maLichChieu = id;
                 thongtinDatVe.danhSachVe = dsGheDangDat;
-                console.log(thongtinDatVe);
                 dispatch(getTicketAction(thongtinDatVe));
                 history.push("/");
               }}

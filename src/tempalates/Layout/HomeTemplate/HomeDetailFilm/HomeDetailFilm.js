@@ -49,7 +49,7 @@ export default function HomeDetailFilm() {
     dispatch(setDetailFilmAction());
   }, []);
   const { listFilmDetail } = useSelector((state) => state.DetailFilmReducer);
-  console.log({ listFilmDetail });
+
   const renderFilmDetail = () => {
     return listFilmDetail?.map((film) => {
       return (

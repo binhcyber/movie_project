@@ -28,10 +28,8 @@ export default function DetailPages() {
   useEffect(() => {
     dispatch(setcalculateFilmAction(id));
   }, []);
-  console.log({ calculateFilm });
-  console.log({ inforFilm });
+
   let danhGiaStar = Math.floor(inforFilm.danhGia / 2);
-  console.log(danhGiaStar);
 
   return (
     <div
@@ -94,7 +92,6 @@ export default function DetailPages() {
                   >
                     <div>
                       {rapChieu.cumRapChieu?.map((rap, index) => {
-                        console.log(rap);
                         return <ItemDetailFilm rap={rap} />;
                       })}
                     </div>

@@ -9,8 +9,6 @@ import * as Yup from "yup";
 export default function Login() {
   const dispatch = useDispatch();
   const { userLogin, userSignUp } = useSelector((state) => state.UserReducer);
-  console.log(userLogin);
-  console.log(userSignUp);
   const SignupSchema = Yup.object().shape({
     matKhau: Yup.string()
       // .matches(/(userLogin?.matKhau)/, "Mât khẩu không hợp lệ")
@@ -33,9 +31,7 @@ export default function Login() {
       validationSchema={SignupSchema}
       onSubmit={(values) => {
         // same shape as initial values
-        console.log(values);
         let data = { ...values, maNhom: "GP01" };
-        // console.log(data);
         dispatch(setUserLoginAction(data));
       }}
     >

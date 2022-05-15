@@ -69,7 +69,6 @@ export default function HomeCarousel() {
     dispatch(GetCarouselAction());
   }, []);
   const { dsBannerPhim } = useSelector((state) => state.CarouselReducer);
-  console.log(dsBannerPhim);
   const renderBanner = () => {
     return dsBannerPhim?.map((banner, index) => {
       return (

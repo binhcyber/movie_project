@@ -13,7 +13,6 @@ export default function Header() {
       type: DANG_XUAT,
     });
   };
-  console.log(userLogin);
   return (
     <nav className="flex w-screen px-6 z-10 fixed top-0 right-0 bottom-0 bg-white shadow-md left-0 mx-auto my-0 items-center justify-between flex-wrap h-24">
       <div className="flex items-center flex-no-shrink text-white mr-6">

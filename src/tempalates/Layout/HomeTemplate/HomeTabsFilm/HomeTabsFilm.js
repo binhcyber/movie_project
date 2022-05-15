@@ -9,20 +9,14 @@ import ItemFilm from "./ItemFilm";
 const { TabPane } = Tabs;
 export default function HomeTabsFilm() {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(setHeThongRapAction());
-  // }, []);
   useEffect(() => {
     dispatch(setThongTinLichChieuAction());
   }, []);
   const { heThongRap, thongTinLichChieu } = useSelector(
     (state) => state.TabsFilmReducer
   );
-  console.log({ heThongRap });
-  console.log({ thongTinLichChieu });
   const renderTabsFilm = () => {
     return thongTinLichChieu?.map((cumrap, index) => {
-      console.log(cumrap);
       return (
         <TabPane
           tab={<img src={cumrap.logo} className="w-10 h-10" />}

@@ -37,7 +37,6 @@ export default function Register() {
       onSubmit={(values) => {
         // same shape as initial values
         let data = { ...values, maNhom: "GP01" };
-        console.log(values);
         dispatch(setUserSignUpAction(data));
       }}
     >
